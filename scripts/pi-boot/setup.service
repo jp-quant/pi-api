@@ -1,0 +1,10 @@
+[Unit]
+Description=Run setup.sh on every boot
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'source /boot/setup.sh'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
