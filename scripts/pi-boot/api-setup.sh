@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # Copy the setup.service file to the systemd system folder
-sudo cp /boot/setup.service /etc/systemd/system/setup.service
+# sudo cp /boot/setup.service /etc/systemd/system/setup.service
 
-# Enable and start the setup.service
-sudo systemctl enable setup.service
-sudo systemctl start setup.service
+sudo systemctl enable /boot/api-setup.service
+
 
 # Configuration variables
 CUSTOM_USERNAME="onyx"
@@ -48,7 +47,7 @@ sudo pip3 install -r requirements.txt
 
 # Run the Flask app
 # For development use:
-# python3 "${FLASK_APP}"
+python3 "${FLASK_APP}"
 
 # For production use:
 # sudo pip3 install gunicorn

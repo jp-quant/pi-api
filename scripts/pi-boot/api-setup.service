@@ -1,0 +1,12 @@
+[Unit]
+Description=API Setup Script Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash /boot/api-setup.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
